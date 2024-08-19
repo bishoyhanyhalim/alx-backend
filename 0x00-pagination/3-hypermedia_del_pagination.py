@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Deletion-resilient hypermedia task
+Deletion-resilient hypermedia task 3
 """
 
 import csv
@@ -9,7 +9,7 @@ from typing import List, Dict
 
 
 class Server:
-    """Server class to paginate
+    """Server class to paginate a database task
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -29,7 +29,7 @@ class Server:
         return self.__dataset
 
     def indexed_dataset(self) -> Dict[int, List]:
-        """Dataset indexed by sorting
+        """Dataset indexed by sorting task
         """
         if self.__indexed_dataset is None:
             dataset = self.dataset()
@@ -41,7 +41,7 @@ class Server:
 
     def get_hyper_index(self, index: int = None,
                         page_size: int = 10) -> Dict:
-        """ return all data"""
+        """taks return all data"""
 
         if index is None:
             index = 0
@@ -50,7 +50,7 @@ class Server:
         assert 0 <= index < len(self.indexed_dataset())
         assert isinstance(page_size, int) and page_size > 0
 
-        data = []
+        data = []  # collect all indexed data
         next_index = index + page_size
 
         for value in range(index, next_index):
