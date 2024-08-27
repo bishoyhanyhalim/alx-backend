@@ -9,6 +9,9 @@ from flask_babel import Babel
 
 class Config(object):
     """_summary_
+
+    Returns:
+            _type_: _description_
     """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
@@ -32,6 +35,8 @@ def get_locale():
         return locale
 
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+# babel.init_app(app, locale_selector=get_locale)
 
 
 @app.route('/')
